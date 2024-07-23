@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Development for PhD Students</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #56018D;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            max-width: 200px;
+            margin: 0 10px; 
+        }
+        .register-btn-container {
+            margin-right: 20px; 
+        }
+        .register-btn {
+            background-color: #fff;
+            color: #56018D;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .register-btn:hover {
+            background-color: #56018D;
+            color: #fff;
+        }
+        .container {
+            width: 100%;
+            padding-top: 80px;
+            margin: 0;
+        }
+        .main-content {
+            background-color: #f4f4f400;
+            padding: 10px;
+            margin-top: 1px;
+            width: 50%;
+            box-sizing: border-box;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .main-content h2 {
+            color: #56018D;
+            text-align: center;
+        }
+        .events {
+            padding: 20px 10px;
+            margin-top: 10px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .events h2 {
+            color: #56018D;
+            text-align: center;
+        }
+        .event-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+        .event-card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+            border-radius: 8px;
+            max-height: 150px;
+        }
+        .event-card h3 {
+            color: #56018D;
+            font-size: 1.2em;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .event-card p {
+            color: #333;
+            font-size: 1em;
+            margin: 5px 0;
+            text-align: center;
+        }
+        .event-card .description {
+            text-align: left;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: #aea9a9ef;
+            position: bottom;
+            bottom: 0;
+            width: 100%;
+            background-color: transparent;
+            margin-left:170px;
+        }
+        footer p {
+            margin: 10;
+        }
+        .notification-bar {
+            background-color: #e6cfefc7;
+            color: #333;
+            text-align: center;
+            padding: 3px;
+            font-weight: bold;
+            position: fixed;
+            top: 60px;
+            width: 80%;
+            max-width: 1200px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            left: 55%;
+            transform: translateX(-50%);
+        }
+        .notification-bar-content {
+            flex: 1;
+        }
+        .close-btn {
+            cursor: pointer;
+            padding: 4px 8px;
+            background-color: #56018D;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .close-btn:hover {
+            background-color: #fff;
+            color: #54008c;
+        }
+        .side-menu {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            width: 150px;
+            background-color: #56018D;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .side-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+        .side-menu a:hover {
+            background-color: #fff;
+            color: #56018D;
+        }
+        .content-wrapper {
+            margin-left: 220px; /* Add margin to the right of the side menu */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Notification Bar -->
+<div class="notification-bar">
+    <div class="notification-bar-content">
+        <p>Kindly Note: The students will need to attend all the workshops in the track they choose. Registration limited to first 50 doctoral students.</p>
+    </div>
+    <button class="close-btn" onclick="closeNotification()">Close</button>
+</div>
+
+<header>
+    <div class="logo-container">
+        <img src="asset/NYUTandon_LongLogo_White.PNG" alt="NYU Tandon Logo" class="logo">
+        <img src="asset/pd4phd.png" alt="PD for PhD Logo" class="logo">
+    </div>
+    <div class="register-btn-container">
+        <a href="#register" class="register-btn">Register</a>
+    </div>
+</header>
+
+<!-- Side Menu -->
+<div class="side-menu">
+    <a href="http://pd4phd.engineering.nyu.edu/tracks/">Tracks</a>
+    <a href="http://pd4phd.engineering.nyu.edu/schedule/">Schedule</a>
+    <a href="http://pd4phd.engineering.nyu.edu/archive/">Archive</a>
+    <a href="http://pd4phd.engineering.nyu.edu/contact/">Contact</a>
+</div>
+
+<div class="container content-wrapper">
+    <section class="events">
+        <section class="main-content">
+            <h2>Leadership</h2>
+        </section>
+        <!-- Event Cards -->
+        <div class="event-card">
+            <img src="asset/workshop.jpg" alt="Event 1 Photo">
+            <h3>Effective Negotiations</h3>
+            <p>Speaker: <a href="https://www.prof.perryatwal.com" target="_blank">PROF. PERRY ATWAL</a></p>
+            <p>Date:  September 14 & 28, 2021</p>
+            <p>Time: 12 - 2 PM</p>
+            <p>Venue: NYU Zoom</p>
+            <div class="pdf">
+                <a href="asset/perry-atwal-f2021.pdf" target="_blank">click to get the event brochure...</a>
+            </div>
+        </div>
+        <div class="event-card">
+            <img src="asset/workshop.jpg" alt="Event 2 Photo">
+            <h3>Storytelling to Land Your Job and Grant</h3>
+            <p>Speaker: <a href="https://www.ms.dasharettew.com" target="_blank">MS. DASHA RETTEW</a></p>
+            <p>Date: October 12 & 26, 2021</p>
+            <p>Time: 12 - 2 PM</p>
+            <p>Venue: NYU Zoom</p>
+            <div class="pdf">
+                <a href="asset/dasha-rettew-f2021.pdf" target="_blank">click to get the event brochure...</a>
+            </div>
+        </div>
+        <div class="event-card">
+            <img src="asset/workshop.jpg" alt="Event 3 Photo">
+            <h3>Decision Making and Leadership</h3>
+            <p>Speaker: <a href="https://www.prof.justingbull.com" target="_blank">PROF. JUSTIN G. BULL</a></p>
+            <p>Date: November 9 & 23, 2021</p>
+            <p>Time:  12 - 2 PM</p>
+            <p>Venue: NYU Zoom</p>
+            <div class="pdf">
+                <a href="asset/justin-g-bull-f2021.pdf" target="_blank">click to get the event brochure...</a>
+            </div>
+        </div>
+        <div class="event-card">
+            <img src="asset/workshop.jpg" alt="Event 4 Photo">
+            <h3>Coming Soon...</h3>
+            <p>Speaker: NYU Tandon</p>
+            <p>Date: December 7 & 21, 2021</p>
+            <p>Time:  12 - 2 PM</p>
+            <p>Venue: NYU Zoom</p>
+            <div class="pdf">
+                <p>The brochure is currently unavailable.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; NYU Tandon 2024</p>
+</footer>
+
+<script>
+    function closeNotification() {
+        var notificationBar = document.querySelector('.notification-bar');
+        notificationBar.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
